@@ -1,0 +1,69 @@
+<html>
+
+<head>
+
+<style>
+ .header{
+ 	text-align:center;
+ 	
+ }
+ #wrapper_1 { clear: left; float: left; position: relative; left: 43%; }
+ body{
+ 	color:teal;
+ }
+ </style>
+
+ <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+
+</head>
+<body class="black">
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/noteUtils.js"></script>
+  <script type="text/javascript" src="js/mailUtils.js"></script>
+  <script type="text/javascript" src="js/utils.js"></script>
+
+<div class="header card-panel white lighten-2 ">
+	<b><h3>Department Information System<h3></b>
+</div>
+
+<div class=" " id="wrapper_1">
+    <form class="col s30" method="GET" id="loginForm" action="LoginServlet">
+      <div class="row">
+        <div class="input-field col">
+        
+          <input id="username" name="username" type="text" class="validate">
+          <label for="username">Username</label>
+       </div>
+       </div>
+        
+      <div class="row">
+        <div class="input-field col ">
+          <input id="password" name="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+      <p>
+          <input name="type" type="radio" id="test1" value="student" />
+          <label for="test1">Student</label>
+      
+          <input name="type" type="radio" id="test2" value="secretary"/>
+          <label for="test2">Secretary</label>
+
+          <input name="type" type="radio" id="test3" value="instructor"/>
+          <label for="test3">Instructor</label>          
+      </p>
+      
+	 </form>
+
+      <button class="btn waves-effect waves-light" style="left:15%;" type="submit" onclick="loginSend()" name="action">Login
+        <i class="material-icons right">send</i>
+      </button>
+
+</div>
+
+</body>
+</html>
