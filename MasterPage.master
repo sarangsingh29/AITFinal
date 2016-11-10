@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <style>
+         .header{
+         text-align:center;
+         }
+         #note_container{
+         width: 50%;
+         float:left;
+         height:80%;
+         overflow: scroll;
+         }
+         #reminder_container{
+         width: 50%;
+         float:left;
+         height:80%;
+         overflow: scroll;
+         }
+          #logoutCont {
+            width: 30%;
+            float:left;
+            height:80%;
+            overflow: scroll;
+          }
+          #insDetailCont {
+           width: 70%;
+           float:left;
+           height:80%;
+           overflow: scroll;
+          }
+         #wrapper_1 { clear: left; float: left; position: relative; left: 43%; 
+         }
+         .modal{
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         left: 0;
+         top: 50px;
+         left:100px;
+         width: 50%; /* Full width */
+         height: 50%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: black;
+         }
+         #container1{
+         width:50%;
+         float:left;
+         height:80%;
+         overflow:scroll;
+         }
+         #container2{
+         width:50%;
+         float:right;
+         height:80%;
+         overflow:scroll;
+         }
+         #studTable{
+            align:center;
+         }
+         .innerDiv{
+         width:100%;
+         height:50%;
+         overflow:scroll;
+         }
+         body{
+         color:teal;
+         }
+      </style>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+   </head>
+   <body class="black">
+      <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/noteUtils.js"></script>
+      <script type="text/javascript" src="js/mailUtils.js"></script>
+      <script type="text/javascript" src="js/utils.js"></script>
+      <script type="text/javascript">
+          localStorage.instructorName = "Yo";
+
+      </script>
+      <div class="header card-panel red accent-1 ">
+         <b>
+            <h3>
+            Welcome <%# Session["name"] %>
+            <h3>
+         </b>
+      </div>
+
+       
+
+      <form id="Form1" runat="server">
+
+         <div class="card-panel black header">
+         <asp:Button runat="server" ID="doneButton" OnClick="done" Text="done">
+         </asp:Button>
+         </div>
+
+        <asp:ContentPlaceHolder runat="server" ID="holder3">
+            Main content goes here.
+        </asp:ContentPlaceHolder>
+          
+       
+          
+        <div class="header card-panel orange accent-1 ">
+         <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="XMLFile.xml" Width="50px" Height="50px"/>
+        </div> 
+      </form>
+           
+   </body>
+</html>
+
+

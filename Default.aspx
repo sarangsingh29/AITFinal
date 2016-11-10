@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" UnobtrusiveValidationMode="none" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
@@ -34,17 +34,19 @@
 </div>
 
 <div class=" " id="wrapper_1">
-    <form runat="server" class="col s30" method="GET" id="loginForm" action="LoginServlet">
+    <form runat="server" class="col s30" method="GET" id="loginForm">
       <div class="row">
         <div class="input-field col">
-          <asp:TextBox runat="server" id="username" ></asp:TextBox>
-          <label for="username">Username</label>
+          <asp:TextBox runat="server" id="id" ></asp:TextBox>
+            <asp:RequiredFieldValidator ControlToValidate="id" runat="server" ErrorMessage="Enter UniqueID" />
+          <label for="id">UniqueID</label>
        </div>
        </div>
         
       <div class="row">
         <div class="input-field col ">
           <asp:TextBox runat="server" id="password" TextMode="Password"></asp:TextBox>
+           <asp:RequiredFieldValidator ControlToValidate="password" runat="server" ErrorMessage="Enter Password" />
           <label for="password">Password</label>
         </div>
       </div>
@@ -58,9 +60,15 @@
 
           <asp:RadioButton runat="server" id="test3" GroupName="type" />
           <label for="test3">Instructor</label>      
+
+          <asp:CustomValidator runat="server" ErrorMessage="Select One" OnServerValidate="customValidFunc"/>
       </p>
+
+        <div class="input-field col">
+          <asp:Label runat="server" id="errMsgLabel" ></asp:Label>
+       </div>
       
-         <asp:Button ID="Button1" runat="server" cssClass="btn waves-effect waves-light" style="left:15%;"   Text="Login"/>
+         <asp:Button ID="Button1" runat="server" OnClick="login" cssClass="btn waves-effect waves-light" style="left:15%;"   Text="Login"/>
 	 </form>
 
      

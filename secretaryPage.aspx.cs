@@ -15,4 +15,8 @@ public partial class secretaryPage : System.Web.UI.Page
     {
         //studentFormDiv.Attributes["style"] = "display:block";
     }
+    protected void nxtBut(object sender, EventArgs e)
+    { 
+        
+    }
 }
