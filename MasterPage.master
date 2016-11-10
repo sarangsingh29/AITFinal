@@ -109,7 +109,7 @@
        
           
         <div class="header card-panel orange accent-1 ">
-         <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="XMLFile.xml" Width="50px" Height="50px"/>
+         <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="XMLFile.xml" Target="_blank" Width="50px" Height="50px"/>
         </div> 
       </form>
            

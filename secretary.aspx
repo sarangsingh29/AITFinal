@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.master" Theme="MaterializeButton" CodeFile="secretary.aspx.cs" Inherits="secretary" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" UnobtrusiveValidationMode="none" MasterPageFile="MasterPage.master" Theme="MaterializeButton" CodeFile="secretary.aspx.cs" Inherits="secretary" %>
 
 
 
@@ -21,6 +21,7 @@
                       <asp:SqlDataSource  ID="deptDetSource" runat="server" 
                                     ConnectionString="Data Source=(localdb)\v11.0;Initial Catalog=DBAIT;Integrated Security=True;Pooling=False"
                                     SelectCommand="select * from department">
+                          
 
                     </asp:SqlDataSource>
                     <asp:DetailsView ID="DetailView3" runat="server" DataSourceID="deptDetSource" />  
@@ -46,7 +47,7 @@
                     <asp:GridView ID="GridView2" runat="server" DataSourceID="acadDetSource" />  
                      
                  </div>
-               </div>
+              
                    <asp:Wizard runat="server"></asp:Wizard>
                 </asp:View>
 
@@ -128,6 +129,8 @@
                                     <asp:ListItem Value="2000">Computer</asp:ListItem>
                                 </asp:DropDownList>
                                 Quantity: <asp:TextBox runat="server" ID="ordQty" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ordQty" ErrorMessage="Enter Quantity" />
+                                <asp:RegularExpressionValidator runat="server" ControlToValidate="ordQty" ErrorMessage="Enter Numeric Values Only" ValidationExpression="[0-9]*" />
                                 
                             </asp:WizardStep>
                             <asp:WizardStep ID="WizardStep3" runat="server" Title="Confirm Details">
